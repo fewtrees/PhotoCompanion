@@ -69,15 +69,13 @@ The application uses:
 - `NODE_ENV`: Set to 'production' for production environments
 - `DATABASE_URL`: PostgreSQL connection string (automatically set when using AWS RDS)
 - `SESSION_SECRET`: Secret key for session encryption
-- `REPL_ID`: Replit ID (for authentication)
-- `REPLIT_DOMAINS`: Comma-separated list of allowed domains
 
 ## Authentication
 
-The platform uses Replit's OpenID Connect for authentication:
-1. Users are redirected to Replit for login
-2. After successful authentication, they're redirected back to the application
-3. User profile information is stored in the database
+The platform uses email/password authentication:
+1. Users can register with email and password
+2. Secure password hashing with bcryptjs
+3. Session-based authentication for login persistence
 
 ## Contributing
 
